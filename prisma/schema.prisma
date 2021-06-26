@@ -47,6 +47,18 @@ model User {
   email         String?   @unique
   emailVerified DateTime? @map(name: "email_verified")
   image         String?
+  username      String?
+  bio           String?
+  dreams        String?
+  followers     String?
+  following     String?
+  address       String?
+  phone         String?
+  facebook      String?
+  instagram     String?
+  twitter       String?
+  tiktok        String?
+  youtube       String?
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @default(now()) @map(name: "updated_at")
 
