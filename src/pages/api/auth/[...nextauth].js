@@ -5,8 +5,6 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export default (req, res) => NextAuth(req, res, options)
-
 const options = {
   site: process.env.NEXTAUTH_URL,
   providers: [
@@ -47,9 +45,12 @@ const options = {
         return Promise.resolve('/home')
       }
       return Promise.resolve('/api/auth/signin')
-    },
+    }
   },
-  // pages: {
-  //   signIn: '/'
-  // }
+  pages: {
+    signIn: '/guard/signin',
+    verifyRequest: '/guard/verify-email'
+  }
 }
+
+export default (req, res) => NextAuth(req, res, options)
