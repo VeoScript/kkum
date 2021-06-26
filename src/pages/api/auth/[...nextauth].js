@@ -49,6 +49,7 @@ const options = {
   },
   pages: {
     signIn: '/guard/signin',
+    error: '/guard/signin',
     verifyRequest: '/guard/verify-email'
   }
 }
