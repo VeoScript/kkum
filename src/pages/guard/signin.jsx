@@ -79,21 +79,14 @@ export default function SignIn({ providers, csrfToken  }) {
 }
 
 export async function getServerSideProps(ctx) {
-  const { req, res } = ctx
   const providers = await getProviders(ctx)
   const csrfToken = await getCsrfToken(ctx)
-  const session = await getSession({ req })
+  const session = await getSession(ctx)
 
-  if (session && res && session.accessToken) {
-    res.writeHead(302, {
-      Location: "/"
-    })
-    res.end()
-    return {
-      session: undefined,
-      providers: await providers(ctx),
-      csrfToken: await getCsrfToken(ctx)
-    }
+  if (session) {
+    ctx.res.writeHead(302, { Location: '/home' })
+    ctx.res.end()
+    return {}
   }
   return {
     props: {
