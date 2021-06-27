@@ -43,10 +43,10 @@ model Session {
 
 model User {
   id            Int       @id @default(autoincrement())
-  name          String?
+  name          String?   @default("The Dreamer")
   email         String?   @unique
   emailVerified DateTime? @map(name: "email_verified")
-  image         String?
+  image         String?   @default("https://i2.wp.com/blackpinkupdate.com/wp-content/uploads/2020/04/3-BLACKPINK-Lisa-Birthday-Message-Post-on-Instagram-2020.jpg?resize=730%2C836&ssl=1")
   username      String?
   bio           String?
   dreams        String?
