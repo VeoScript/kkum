@@ -62,7 +62,7 @@ export default function SignIn({ providers, csrfToken  }) {
                 return (
                   <div key={provider.name}>
                     <button
-                      className={`${provider.name === "Google" ? 'text-[#fff] bg-[#4081EC]' : 'text-[#fff] bg-[#222]'} px-5 py-3 w-full rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 text-center focus:outline-none`}
+                      className={`${provider.name === "Google" ? 'text-[#fff] bg-[#DC4E41]' : provider.name === "Facebook" ? 'text-[#fff] bg-[#0B83ED]' : 'text-[#fff] bg-[#222]'} px-5 py-3 w-full rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 text-center focus:outline-none`}
                       onClick={() => signIn(provider.id)}
                     >
                       Sign in with {provider.name}
