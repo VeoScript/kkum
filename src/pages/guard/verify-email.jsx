@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function VerifyEmail() {
+  const router = useRouter()
   return (
     <>
       <Head>
@@ -21,11 +22,12 @@ export default function VerifyEmail() {
             </p>
           </div>
           <div className="flex flex-col items-center w-full">
-            <Link href="/">
-              <a className="px-5 py-3 mt-10 w-full max-w-sm rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 text-center text-[#fff] bg-[#1A2D38]">
-                Return
-              </a>
-            </Link>
+            <button
+              onClick={() => router.back()}
+              className="px-5 py-3 mt-10 w-full max-w-sm rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 text-center text-[#fff] bg-[#1A2D38]"
+            >
+              Return
+            </button>
           </div>
         </div>
       </div>
