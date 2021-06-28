@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function HomeContent({ getUser }) {
   return (
-    <div className="flex flex-row w-full h-full">
+    <div className="flex flex-row w-full h-full space-x-5">
+      {/* Left Side Display */}
       <div className="left flex flex-col justify-between w-full max-w-[16rem] h-full max-h-[22rem] rounded-lg shadow-xl bg-kkum-mid overflow-hidden">
         <img className="w-full h-28 bg-kkum-dark bg-opacity-30 object-cover" src="https://66.media.tumblr.com/2968b8444c8881c95f8ca9daddd904e7/tumblr_pjriexfpog1r85hlio3_500.png" />
         <div className="relative">
@@ -48,6 +49,47 @@ export default function HomeContent({ getUser }) {
               <span>Dreams</span>
             </a>
           </Link>
+        </div>
+      </div>
+      {/* Center Display */}
+      <div className="center flex flex-col w-full max-w-full space-y-3">
+        {/* Create Post Card Display */}
+        <div className="write flex flex-col w-full rounded-lg shadow-xl bg-kkum-mid">
+          <div className="flex flex-row w-full space-x-3 px-5 py-3">
+            <img className="w-10 h-10 object-cover rounded-full bg-kkum-dark" src={getUser.image} />
+            <article
+              className="w-full h-full bg-kkum-mid text-base cursor-text focus:outline-none resize-none py-2"
+              contentEditable
+              placeholder="Share your dreams, anxiety or depressions..."
+            />
+            <button>
+              <svg className="w-6 h-6 text-gray-400 hover:text-kkum-khaki" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </button>
+          </div>
+          <hr className="border-t border-kkum-dark" />
+          <div className="flex flex-row items-center justify-end w-full">
+            <button className="w-full max-w-[8rem] py-3 text-sm bg-kkum-dark bg-opacity-50 hover:bg-opacity-30">
+              Post
+            </button>
+          </div>
+        </div>
+        {/* Users Post Card Display */}
+        <div className="postcard flex flex-col w-full rounded-lg shadow-xl bg-kkum-mid">
+          <div className="flex flex-row items-center w-full space-x-2 px-5 py-3">
+            <img className="w-10 h-10 object-cover rounded-full bg-kkum-dark" src={getUser.image} />
+            <div className="flex flex-col -space-y-1">
+              <h1 className="font-semibold text-base text-gray-300">{getUser.name}</h1>
+              <h3 className="font-light text-sm text-gray-400">{getUser.username}</h3>
+            </div>
+          </div>
+          <div className="flex flex-row w-full px-5 font-light text-sm text-gray-300">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sed deserunt hic est, ratione saepe facilis dolorum consequatur exercitationem numquam? Omnis laboriosam aliquid temporibus, similique quidem ratione. Animi, tempora amet?</span>
+          </div>
+          <div className="flex flex-row w-full px-5 py-3 font-light text-sm text-gray-300">
+            Reactions
+          </div>
         </div>
       </div>
     </div>
