@@ -8,7 +8,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center w-full h-screen transition ease-in-out duration-300 bg-[#131E29]">
+      <div className="flex flex-col items-center justify-center w-full h-screen transition ease-in-out duration-300 bg-kkum-dark">
         <KkumLoading />
       </div>
     )
@@ -19,15 +19,15 @@ export default function Home() {
       <Head>
         <title>Kkum</title>
       </Head>
-      <div className="flex flex-col items-center justify-center w-full h-screen bg-[#131E29]">
+      <div className="flex flex-col items-center justify-center w-full h-screen bg-kkum-dark">
         {!session && (
           <div className="flex flex-col items-center justify-center w-full h-full">
             <div className="flex flex-col items-center w-full">
-              <h1 className="font-black text-5xl text-[#CCB57F]">Kkum</h1>
-              <h3 className="font-light text-base text-[#fff]">Open the portal of your imagination.</h3>
+              <h1 className="font-black text-5xl text-kkum-khaki">Kkum</h1>
+              <h3 className="font-light text-base text-kkum-white">Open the portal of your imagination.</h3>
               <button
                 onClick={signIn}
-                className="px-5 py-3 w-full max-w-xs mt-5 rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 font-bold text-center text-[#fff] bg-[#1A2D38]"
+                className="px-5 py-3 w-full max-w-xs mt-5 rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 font-bold text-center text-kkum-white bg-kkum-mid"
               >
                 Sign in
               </button>
@@ -37,10 +37,10 @@ export default function Home() {
         {session && (
           <div className="flex flex-col items-center justify-center w-full h-full">
             <div className="flex flex-col items-center w-full">
-              <h1 className="font-black text-5xl text-[#CCB57F]">Kkum</h1>
-              <h3 className="font-light text-base text-[#fff]">Open the portal of your imagination.</h3>
+              <h1 className="font-black text-5xl text-kkum-khaki">Kkum</h1>
+              <h3 className="font-light text-base text-kkum-white">Open the portal of your imagination.</h3>
               <Link href="/home">
-                <a className="px-5 py-3 w-full max-w-xs mt-5 rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 font-bold text-center text-[#fff] bg-[#1A2D38]">
+                <a className="px-5 py-3 w-full max-w-xs mt-5 rounded-lg shadow-2xl transition ease-in-out duration-300 transform hover:scale-95 font-bold text-center text-kkum-white bg-kkum-mid">
                   Go to Portal
                 </a>
               </Link>
