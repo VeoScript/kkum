@@ -36,7 +36,7 @@ export default function NavigationBar({ getUser }) {
         </div>
         <hr className="h-6 border-l-2 border-kkum-mid" />
         <div className="flex flex-col">
-          <button onClick={() => {setIsOpen(true)}} className="flex flex-row items-center text-gray-400 space-x-2 focus:outline-none">
+          <button onClick={() => {setIsOpen(true)}} className="flex flex-row items-center text-gray-400 space-x-2 hover:text-kkum-khaki focus:outline-none">
             <img className="w-8 h-8 rounded-full object-cover bg-kkum-mid" src={getUser.image} />
             <span className="font-light text-sm">{ getUser.name }</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
