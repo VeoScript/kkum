@@ -33,6 +33,8 @@ export async function getServerSideProps(ctx) {
     select: {
       image: true,
       name: true,
+      email: true,
+      username: true,
       bio: true
     }
   })
