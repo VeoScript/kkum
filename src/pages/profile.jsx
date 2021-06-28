@@ -2,10 +2,10 @@ import { useSession } from 'next-auth/client'
 import dynamic from 'next/dynamic'
 
 const UnauthenticatedComponent = dynamic(() =>
-  import('~/components/Unauthenticated')
+  import('~/components/Guard/Unauthenticated')
 )
 const AuthenticatedComponent = dynamic(() =>
-  import('~/components/Authenticated')
+  import('~/components/Guard/Authenticated')
 )
 
 export default function Profile() {
