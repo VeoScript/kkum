@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '~/layouts/default'
+import HomeContent from '~/components/HomeContent'
 import { getSession } from 'next-auth/client'
 import { PrismaClient } from '@prisma/client'
 
@@ -12,9 +13,7 @@ export default function Home({ getUser }) {
         <title>Kkum | Home</title>
       </Head>
       <Layout getUser={getUser}>
-        <div>
-          This is Final Content
-        </div>
+        <HomeContent getUser={getUser} />
       </Layout>
     </>
   )
