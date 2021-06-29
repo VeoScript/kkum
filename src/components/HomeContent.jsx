@@ -52,7 +52,7 @@ export default function HomeContent({ getUser }) {
         </div>
       </div>
       {/* Center Display */}
-      <div className="center flex flex-col w-full max-w-full space-y-3">
+      <div className="center flex flex-col w-full max-w-full space-y-3 overflow-y-auto pb-20">
         {/* Create Post Card Display */}
         <div className="write flex flex-col w-full rounded-lg shadow-xl bg-kkum-mid">
           <div className="flex flex-row w-full space-x-3 px-5 py-3">
