@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Like from '~/components/Icons/Reactions/Like'
+import Unlike from '~/components/Icons/Reactions/Unlike'
 
 export default function HomeContent({ getUser }) {
   return (
@@ -77,18 +79,30 @@ export default function HomeContent({ getUser }) {
         </div>
         {/* Users Post Card Display */}
         <div className="postcard flex flex-col w-full rounded-lg shadow-xl bg-kkum-mid">
-          <div className="flex flex-row items-center w-full space-x-2 px-5 py-3">
-            <img className="w-10 h-10 object-cover rounded-full bg-kkum-dark" src={getUser.image} />
-            <div className="flex flex-col -space-y-1">
-              <h1 className="font-semibold text-base text-gray-300">{getUser.name}</h1>
-              <h3 className="font-light text-sm text-gray-400">{getUser.username}</h3>
+          <div className="flex flex-row items-center justify-between w-full px-5 py-3">
+            <div className="flex flex-row items-center space-x-2">
+              <img className="w-10 h-10 object-cover rounded-full bg-kkum-dark" src={getUser.image} />
+              <div className="flex flex-col -space-y-1">
+                <h1 className="font-semibold text-base text-gray-300">{getUser.name}</h1>
+                <h3 className="font-light text-sm text-gray-400">{getUser.username}</h3>
+              </div>
             </div>
+            <button className="flex flex-row">
+              <Unlike />
+            </button>
           </div>
           <div className="flex flex-row w-full px-5 font-light text-sm text-gray-300">
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sed deserunt hic est, ratione saepe facilis dolorum consequatur exercitationem numquam? Omnis laboriosam aliquid temporibus, similique quidem ratione. Animi, tempora amet?</span>
           </div>
-          <div className="flex flex-row w-full px-5 py-3 font-light text-sm text-gray-300">
-            Reactions
+          <div className="flex flex-row w-full px-5 py-3 font-light text-sm text-gray-300 space-x-3">
+            <span className="flex text-xs space-x-1">
+              <span className="text-kkum-khaki">33</span>
+              <span className="text-gray-400">Hearts</span>
+            </span>
+            <span className="flex text-xs space-x-1">
+              <span className="text-kkum-khaki">0</span>
+              <span className="text-gray-400">Comments</span>
+            </span>
           </div>
         </div>
       </div>
